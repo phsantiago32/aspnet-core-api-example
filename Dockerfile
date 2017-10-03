@@ -1,6 +1,14 @@
-FROM microsoft/aspnetcore:1.1
-ARG source
+FROM microsoft/dotnet
+
+ARG distFolder=aspnet-core-api-example/bin/Release/netcoreapp1.1
+ARG configuration=Release
+ARG apiProtocol=https
+ARG apiPort=8000
+ARG appFile=aspnet-core-api-example.dll
+
+RUN dotnet publish -c ${configuration}
+RUN mv ${distFolder} /app
+
 WORKDIR /app
-EXPOSE 8000
-COPY ${source:-obj/Docker/publish} .
-ENTRYPOINT ["dotnet", "aspnet-core-api-example.dll"]
+EXPOSE ${apiPort}
+ENTRYPOINT ["dotnet", $appFile]
