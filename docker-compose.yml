@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  aspnet-core-api-example:
+    image: aspnet-core-api-example
+    build:
+      context: ./aspnet-core-api-example
+      dockerfile: Dockerfile
