@@ -6,7 +6,9 @@ ARG apiProtocol=https
 ARG apiPort=8000
 ARG appFile=aspnet-core-api-example.dll
 
-RUN dotnet publish -c ${configuration}
+RUN ls
+
+RUN dotnet publish aspnet-core-api-example.sln -c ${configuration}
 RUN mv ${distFolder} /app
 
 WORKDIR /app
