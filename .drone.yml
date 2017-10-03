@@ -1,6 +1,6 @@
 pipeline:
   api:
-    image: microsoft/aspnetcore:1.1
+    image: microsoft/dotnet
     commands:
       - dotnet restore aspnet-core-api-example.sln
       - dotnet build aspnet-core-api-example.sln
