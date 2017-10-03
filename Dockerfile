@@ -1,6 +1,6 @@
 FROM microsoft/dotnet
 
-WORKDIR /drone/src/github.com/psantiago32/aspnet-core-api-example
+WORKDIR /builds/sample-api
 
 RUN ls
 
