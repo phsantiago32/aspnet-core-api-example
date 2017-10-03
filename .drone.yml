@@ -5,3 +5,8 @@ pipeline:
       - dotnet restore aspnet-core-api-example.sln
       - dotnet build aspnet-core-api-example.sln
       
+  docker:
+    image: plugins/docker
+    secrets: [ docker_username, docker_password ]
+    repo: phsantiago/aspnet-core-api-example
+    tags: latest 
